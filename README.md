@@ -34,17 +34,30 @@ Snakefile                        → Reproducible pipeline wrapper
 
 ---
 
+## Setup
+
+```bash
+# Option A: conda (recommended)
+conda env create -f environment.yml
+conda activate ad-rnaseq
+
+# Option B: pip
+pip install -r requirements.txt
+```
+
 ## Quick Start
 
 ```bash
-# Environment
-module load python/3.13.5
-source ~/rnaseq_venv311/bin/activate
+# 1. Download data from GEO
+bash scripts/00_download.sh
 
-# Dry run
+# 2. Dry run — check pipeline
 snakemake -n
 
-# Full run (submit via SLURM)
+# 3. Run full pipeline
+snakemake --cores 4
+
+# On HPC with SLURM:
 sbatch --wrap="snakemake --cores 4" \
        --time=04:00:00 --mem=32G --cpus-per-task=4
 ```
