@@ -4,7 +4,7 @@ echo "=== Downloading GSE125583 from GEO ==="
 echo "Dataset: AD Fusiform Gyrus (219 AD + 70 Controls)"
 echo ""
 
-cd /scratch/arumuganainar.d/projects/AD_RNAseq_Project/data/raw/
+cd *project directory path here*
 
 # Download the RAW tar file (contains all sample data)
 echo "Downloading RAW data (87.4 MB)..."
