@@ -1,0 +1,20 @@
+# Raw data — too large, downloaded via 00_download.sh
+data/raw/
+data/processed/
+data/annotations/Homo_sapiens.gene_info.gz
+
+# Generated results — reproducible via Snakemake
+analysis_v2/results_model*/
+analysis_v2/enrichment/GSEA/
+analysis_v2/enrichment/Enrichr*
+analysis_v2/enrichment/gseapy*
+
+# Logs
+logs/
+*.log
+slurm-*.out
+
+# Python
+__pycache__/
+*.pyc
+.snakemake/

@@ -1,0 +1,111 @@
+=================================================================
+AD RNAseq PIPELINE VERIFICATION REPORT
+GSE125583 — Fusiform Gyrus Bulk RNA-seq
+Generated: 2026-03-24 20:37:59
+=================================================================
+
+=================================================================
+CHECK 1: Required files exist
+=================================================================
+  [PASS]  results_model1/DE_results.csv
+  [PASS]  results_model2/DE_results.csv
+  [PASS]  results_model3/DE_results.csv
+  [PASS]  results_model4/DE_results.csv
+  [PASS]  sample_metadata_covariates.csv
+
+=================================================================
+CHECK 2: Metadata integrity
+=================================================================
+  [PASS]  Total samples 285-290  ->  found 289
+  [PASS]  AD samples ~219  ->  found 219
+  [PASS]  Control samples ~70  ->  found 70
+  [PASS]  Controls older than AD  ->  AD=83.4  Ctl=87.0
+  [PASS]  MicrogliaScore present
+  [PASS]  NeuronScore present
+  [PASS]  AstrocyteScore present
+  [PASS]  OligoScore present
+
+=================================================================
+CHECK 3: Model progression
+=================================================================
+  Model 1 (~ Diagnosis                                       ): 11,878 sig (59.3%)
+  Model 2 (~ Age + Sex + Diagnosis                           ): 11,459 sig (57.2%)
+  Model 3 (~ Age + Sex + Braak + Diagnosis                   ):  7,202 sig (36.0%)
+  Model 4 (~ Age + Sex + Braak + CellScores + Diagnosis      ):  2,289 sig (11.4%)
+
+  [PASS]  DEG count strictly decreases
+  [PASS]  Large reduction from Model 1 to 4  ->  81%
+
+=================================================================
+CHECK 4: Biological plausibility (Model 4)
+=================================================================
+  [PASS]  APOE upregulated in AD  ->  LFC=0.041
+  [PASS]  ABCA7 significant  ->  LFC=0.270 padj=1.24e-02
+  [PASS]  Neuronal genes direction (10 found)  ->  mean LFC=-0.067 (expected ~0 after correction)
+  [PASS]  HAM-Up genes trend positive (35/36)  ->  mean LFC=0.044
+  [FAIL]  HAM-Down genes trend negative (19/21)  ->  mean LFC=0.014
+
+=================================================================
+CHECK 5: Top genes in Model 4
+=================================================================
+  Significant: 2,289 (Up: 1191, Down: 1098)
+
+  TOP 10 UPREGULATED:
+    101927848       LFC=  1.049  padj=1.52e-07
+    TEPSIN          LFC=  0.303  padj=1.85e-06
+    ADAMTS2         LFC=  0.655  padj=2.01e-06
+    SMTN            LFC=  0.613  padj=2.98e-06
+    ZSWIM8          LFC=  0.284  padj=2.98e-06
+    102724611       LFC=  0.855  padj=3.20e-06
+    ARAP1           LFC=  0.266  padj=3.28e-06
+    CAPN15          LFC=  0.341  padj=3.28e-06
+    PHRF1           LFC=  0.236  padj=3.28e-06
+    IKBKB           LFC=  0.223  padj=3.28e-06
+
+  TOP 10 DOWNREGULATED:
+    EGR2            LFC= -2.223  padj=6.53e-15
+    FOSB            LFC= -1.579  padj=1.30e-11
+    EGR1            LFC= -1.270  padj=1.30e-09
+    PTGS2           LFC= -1.357  padj=1.92e-09
+    EID2B           LFC= -0.391  padj=3.28e-06
+    RBM3            LFC= -0.603  padj=3.28e-06
+    CHCHD7          LFC= -0.300  padj=4.43e-06
+    GAD1            LFC= -0.493  padj=5.96e-06 [Neuron]
+    TTC19           LFC= -0.246  padj=1.73e-05
+    NAP1L5          LFC= -0.306  padj=1.92e-05
+
+=================================================================
+CHECK 6: AD risk genes
+=================================================================
+  Found: 20/20  Significant: 2
+    ABCA7        LFC=  0.270  padj=1.24e-02
+    INPP5D       LFC=  0.196  padj=8.50e-03
+
+=================================================================
+CHECK 7: HAM gene set (Srinivasan et al. 2020)
+=================================================================
+  HAM genes found: 54/57
+  HAM genes significant: 6
+
+  Gene            Expected  Actual    Match   LFC
+  -------------------------------------------------------
+  ZNF703           Up        Up        YES     0.303
+  GAS2L1           Up        Up        YES     0.205
+  FBRSL1           Up        Up        YES     0.177
+  CLDN15           Up        Up        YES     0.450
+  ULK3             Up        Up        YES     0.144
+  SMAD7            Up        Up        YES     0.186
+
+=================================================================
+SUMMARY
+=================================================================
+
+  Model 1 (naive):          11,878 sig (59.3%)
+  Model 2 (+Age+Sex):       11,459 sig (57.2%)
+  Model 3 (+Braak):          7,202 sig (36.0%)
+  Model 4 (+CellScores):     2,289 sig (11.4%)
+  Reduction: 81%
+
+  The progressive reduction demonstrates that the majority of
+  naive DE signal reflects confounding from cell composition
+  and disease severity, not true transcriptional regulation.

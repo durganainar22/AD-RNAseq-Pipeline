@@ -1,0 +1,42 @@
+=================================================================
+BIOLOGICAL INTERPRETATION — AD RNA-seq GSE125583 Model 4
+Generated: 2026-03-24 20:37
+=================================================================
+
+Significant genes after full correction: 1829
+  Upregulated in AD: 932
+  Downregulated in AD: 897
+
+GO ENRICHMENT (upregulated genes):
+  Regulation Of Transcription By RNA Polymerase II (GO:0006357 padj=6.92e-11
+  Regulation Of DNA-templated Transcription (GO:0006355)       padj=3.69e-09
+  Positive Regulation Of Transcription By RNA Polymerase II (G padj=6.55e-06
+  Positive Regulation Of DNA-templated Transcription (GO:00458 padj=1.11e-05
+  Negative Regulation Of DNA-templated Transcription (GO:00458 padj=5.05e-05
+  Negative Regulation Of Transcription By RNA Polymerase II (G padj=5.46e-05
+  Regulation Of Gene Expression (GO:0010468)                   padj=5.66e-04
+  Regulation Of Nucleic Acid-Templated Transcription (GO:19035 padj=5.71e-04
+  Central Nervous System Development (GO:0007417)              padj=3.32e-03
+  Neural Tube Closure (GO:0001843)                             padj=3.36e-03
+
+GSEA — TOP SUPPRESSED IN AD:
+  NES=-2.59  Cellular Respiration (GO:0045333)
+  NES=-2.42  Lymphocyte Chemotaxis (GO:0048247)
+  NES=-2.39  Cytoplasmic Translation (GO:0002181)
+  NES=-2.39  Proton Motive Force-Driven ATP Synthesis (GO:0015986)
+  NES=-2.36  Proton Motive Force-Driven Mitochondrial ATP Synthesis 
+
+GSEA — TOP ACTIVATED IN AD:
+  NES=+2.06  Bicellular Tight Junction Assembly (GO:0070830)
+  NES=+2.02  Tight Junction Assembly (GO:0120192)
+  NES=+2.01  Regulation Of DNA Biosynthetic Process (GO:2000278)
+  NES=+2.00  Embryonic Limb Morphogenesis (GO:0030326)
+  NES=+1.99  Positive Regulation Of Biosynthetic Process (GO:0009891
+
+KEY FINDINGS:
+1. Most bulk AD signal is compositional (cell-type proportion changes)
+2. EGR family (EGR1, EGR2) downregulated — impaired activity-dependent transcription
+3. Immune/chemokine pathways suppressed after correction — inflammation signal
+   was driven by more microglia, not transcriptional activation
+4. Synaptic/ion transport pathways activated — possible compensatory response
+5. ABCA7 (AD GWAS gene) significantly upregulated — validates pipeline
