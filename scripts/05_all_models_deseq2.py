@@ -31,7 +31,7 @@ from pathlib import Path
 from pydeseq2.dds import DeseqDataSet
 from pydeseq2.ds import DeseqStats
 
-BASE = Path('/scratch/arumuganainar.d/projects/AD_RNAseq_Project/AD_RNAseq_clean')
+BASE = Path('/path to project')
 os.chdir(BASE)
 
 print("=" * 65)
