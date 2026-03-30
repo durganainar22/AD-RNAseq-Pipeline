@@ -29,7 +29,7 @@ import os
 import sys
 from pathlib import Path
 
-BASE = Path('/scratch/arumuganainar.d/projects/AD_RNAseq_Project/AD_RNAseq_clean')
+BASE = Path('/path to project')
 os.chdir(BASE)
 
 try:
