@@ -12,7 +12,7 @@
 # SLURM usage:
 #   sbatch --wrap="module load python/3.13.5 && \
 #     source ~/rnaseq_venv311/bin/activate && \
-#     cd /scratch/arumuganainar.d/projects/AD_RNAseq_Project/AD_RNAseq_clean && \
+#     cd /**project path** && \
 #     snakemake --cores 4" \
 #     --output=logs/snakemake_%j.out --error=logs/snakemake_%j.err \
 #     --time=04:00:00 --mem=32G --cpus-per-task=4
